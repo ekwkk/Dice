@@ -12,8 +12,12 @@ void setup()
 
 void draw()
 {
-	newDie = new Die(50,50);
-	newDie.show();
+	for (int x = 50; x <= 450; x = x + 200)
+	{
+		newDie = new Die(x,50);
+		newDie.show();
+	}
+	
 }
 
 
@@ -52,11 +56,47 @@ class Die
 	{
 		noStroke();
 		fill(153,255,255);
-		rect(myX, myY, 150 , 150);
+		rect(myX, myY, 150 , 150, 70);
 
+		fill(0);
 		if (die == 1)
 		{
-			ellipse(x, y, width, height);
+			ellipse(myX+70, myY+70, 25, 25);
+		}
+		else if (die == 2)
+		{
+			ellipse(myX+35, myY+70, 25, 25);
+			ellipse(myX+105, myY+70, 25, 25);
+		}
+		else if (die == 3)
+		{
+			ellipse(myX+35, myY+35, 25, 25);
+			ellipse(myX+70, myY+70, 25, 25);
+			ellipse(myX+105, myY+105, 25, 25);
+		}
+		else if (die == 4)
+		{
+			ellipse(myX+50, myY+50, 25, 25);
+			ellipse(myX+50, myY+100, 25, 25);
+			ellipse(myX+100, myY+50, 25, 25);
+			ellipse(myX+100, myY+100, 25, 25);
+		}
+		else if (die == 5)
+		{
+			ellipse(myX+50, myY+50, 25, 25);
+			ellipse(myX+50, myY+100, 25, 25);
+			ellipse(myX+100, myY+50, 25, 25);
+			ellipse(myX+100, myY+100, 25, 25);
+			ellipse(myX+75, myY+75, 25, 25);
+		}
+		else
+		{
+			ellipse(myX+50, myY+30, 25, 25);
+			ellipse(myX+50, myY+70, 25, 25);
+			ellipse(myX+100, myY+30, 25, 25);
+			ellipse(myX+100, myY+70, 25, 25);
+			ellipse(myX+50, myY+110, 25, 25);
+			ellipse(myX+100, myY+110, 25, 25);
 		}
 	}
 }
