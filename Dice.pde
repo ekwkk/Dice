@@ -1,4 +1,6 @@
 Die newDie;
+int counter;
+
 
 void setup()
 {
@@ -12,12 +14,32 @@ void setup()
 
 void draw()
 {
+	PImage img = loadImage("download.jpg");
+	
+	background(78, 164, 186);
+	int sum = 0;
 	for (int x = 50; x <= 450; x = x + 200)
 	{
 		newDie = new Die(x,50);
 		newDie.show();
+		counter += newDie.die;
+		sum += newDie.die;
 	}
-	
+	textSize(40);
+	textAlign(CENTER);
+	text("This roll: " + sum, 150, 250);
+	text("Total roll: " + counter, 150, 300);
+
+	if (counter > 500)
+	{
+		background(255);
+		textAlign(CENTER);
+		textSize(20);
+		text("You are over 500! Click to restart.", 350, 250);
+		image(img, 350,300);
+		counter = 0;
+		sum = 0;
+	}
 }
 
 
