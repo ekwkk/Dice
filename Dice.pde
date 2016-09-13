@@ -1,5 +1,6 @@
 Die newDie;
 int counter;
+PImage img;
 
 
 void setup()
@@ -7,6 +8,7 @@ void setup()
 	size(700,500);
 	background(78, 164, 186);
 	noLoop();
+	img = loadImage("download.jpg");
 }
 
 
@@ -14,7 +16,6 @@ void setup()
 
 void draw()
 {
-	PImage img = loadImage("download.jpg");
 
 	background(78, 164, 186);
 	int sum = 0;
