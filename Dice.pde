@@ -5,7 +5,7 @@ PImage img;
 
 void setup()
 {
-	size(700,500);
+	size(650,800);
 	background(78, 164, 186);
 	noLoop();
 	img = loadImage("download.jpg");
@@ -19,17 +19,20 @@ void draw()
 
 	background(78, 164, 186);
 	int sum = 0;
-	for (int x = 50; x <= 450; x = x + 200)
+	for (int y = 50; y <= 450; y = y + 200)
 	{
-		newDie = new Die(x,50);
-		newDie.show();
-		counter += newDie.die;
-		sum += newDie.die;
+		for (int x = 50; x < 650; x+= 200)
+		{
+			newDie = new Die(x,y);
+			newDie.show();
+			counter += newDie.die;
+			sum += newDie.die;
+		}
 	}
 	textSize(40);
 	textAlign(CENTER);
-	text("This roll: " + sum, 150, 250);
-	text("Total roll: " + counter, 150, 300);
+	text("This roll: " + sum, 150, 700);
+	text("Total roll: " + counter, 150, 750);
 
 	if (counter > 300)
 	{
